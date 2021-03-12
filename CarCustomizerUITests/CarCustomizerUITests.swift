@@ -22,13 +22,50 @@ class CarCustomizerUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testWhenBoughtTireAndExhaustPackageGodUpgradeIsDisabled() throws {
+        //arrange
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //act
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.switches["Exhaust package [500G]"]/*[[".cells[\"Exhaust package [500G]\"].switches[\"Exhaust package [500G]\"]",".switches[\"Exhaust package [500G]\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.switches["Tires package [500G]"]/*[[".cells[\"Tires package [500G]\"].switches[\"Tires package [500G]\"]",".switches[\"Tires package [500G]\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        //assert
+        XCTAssertEqual(tablesQuery.switches["God package [2000G]"].isEnabled, false)
+    }
+    func testWhenGodUpgradeBoughtItCanBeSold() throws {
+        //arrange
+        let app = XCUIApplication()
+        app.launch()
+        //act
+        
+        let tablesQuery = app.tables
+        tablesQuery.switches["God package [2000G]"].tap()
+        
+        //assert
+        XCTAssertEqual(tablesQuery.switches["God package [2000G]"].isEnabled, true)
+    }
+    
+    func testSettingsAndMoneyAreSavedWhenCarChanged() {
+        //arrange
+        let app = XCUIApplication()
+        app.launch()
+        //act
+        
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.switches["Exhaust package [500G]"]/*[[".cells[\"Exhaust package [500G]\"].switches[\"Exhaust package [500G]\"]",".switches[\"Exhaust package [500G]\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Next Car"]/*[[".cells[\"Make: ferrari\\nModel: spyder\\nTop Speed: 145 mph\\nAcceleration: 8.1s (0-60)\\nHandling: 3, Next Car\"].buttons[\"Next Car\"]",".buttons[\"Next Car\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Next Car"]/*[[".cells[\"Make: Tesla\\nModel: model S\\nTop Speed: 190 mph\\nAcceleration: 4.3s (0-60)\\nHandling: 6, Next Car\"].buttons[\"Next Car\"]",".buttons[\"Next Car\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Next Car"]/*[[".cells[\"Make: Bhuggati\\nModel: Veron\\nTop Speed: 230 mph\\nAcceleration: 1.9s (0-60)\\nHandling: 2, Next Car\"].buttons[\"Next Car\"]",".buttons[\"Next Car\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Next Car"]/*[[".cells[\"Make: Landrover\\nModel: discovery\\nTop Speed: 130 mph\\nAcceleration: 10.3s (0-60)\\nHandling: 8, Next Car\"].buttons[\"Next Car\"]",".buttons[\"Next Car\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        
+        //arrange
+        XCTAssertEqual(tablesQuery/*@START_MENU_TOKEN@*/.switches["Exhaust package [500G]"]/*[[".cells[\"Exhaust package [500G]\"].switches[\"Exhaust package [500G]\"]",".switches[\"Exhaust package [500G]\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.isSelected, true)
+        //couldn't find the code to check if switch is on or not, isSelected was always false
     }
 
     func testLaunchPerformance() throws {

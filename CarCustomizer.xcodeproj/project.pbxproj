@@ -13,6 +13,9 @@
 		7E3E1FAD25F80026004BC327 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3E1FAC25F80026004BC327 /* Preview Assets.xcassets */; };
 		7E3E1FB825F80026004BC327 /* CarCustomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E1FB725F80026004BC327 /* CarCustomizerTests.swift */; };
 		7E3E1FC325F80026004BC327 /* CarCustomizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E1FC225F80026004BC327 /* CarCustomizerUITests.swift */; };
+		7E3E1FD425F8019F004BC327 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E1FD325F8019F004BC327 /* Car.swift */; };
+		7E3E1FD825F801F4004BC327 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E1FD325F8019F004BC327 /* Car.swift */; };
+		7E3E1FE025F80FB3004BC327 /* StarterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E1FDF25F80FB3004BC327 /* StarterCars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 		7E3E1FBE25F80026004BC327 /* CarCustomizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarCustomizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3E1FC225F80026004BC327 /* CarCustomizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCustomizerUITests.swift; sourceTree = "<group>"; };
 		7E3E1FC425F80026004BC327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3E1FD325F8019F004BC327 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		7E3E1FDF25F80FB3004BC327 /* StarterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,8 @@
 				7E3E1FA925F80026004BC327 /* Assets.xcassets */,
 				7E3E1FAE25F80026004BC327 /* Info.plist */,
 				7E3E1FAB25F80026004BC327 /* Preview Content */,
+				7E3E1FD325F8019F004BC327 /* Car.swift */,
+				7E3E1FDF25F80FB3004BC327 /* StarterCars.swift */,
 			);
 			path = CarCustomizer;
 			sourceTree = "<group>";
@@ -261,6 +268,8 @@
 			files = (
 				7E3E1FA825F80022004BC327 /* ContentView.swift in Sources */,
 				7E3E1FA625F80022004BC327 /* CarCustomizerApp.swift in Sources */,
+				7E3E1FE025F80FB3004BC327 /* StarterCars.swift in Sources */,
+				7E3E1FD425F8019F004BC327 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3E1FD825F801F4004BC327 /* Car.swift in Sources */,
 				7E3E1FB825F80026004BC327 /* CarCustomizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
